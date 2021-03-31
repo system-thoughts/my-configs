@@ -1,0 +1,40 @@
+# system
+set timeout = 10
+set mail_check = 60
+
+# compose
+set abort_nosubject = no
+
+# index
+set sort = "threads"
+set sort_aux = "reverse-last-date-received"
+set sort_re
+
+# pager
+set pager_stop
+
+#side bar
+set sidebar_visible
+
+# ssl
+set ssl_force_tls = yes
+
+# header
+set from = <your email name> 
+set realname = <your real name>
+
+# imap
+# take gmail for example
+set imap_user = "foo.bar@gmail.com" 
+set imap_pass = "app-specific password"
+
+# folder
+set folder = "imaps://imap.gmail.com/"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"
+set record = "+[Gmail]/Sent Mail"
+set trash = "+[Gmail]/Trash"
+
+# smtp
+set smtp_url = "smtp://foo.bar@smtp.gmail.com:587"
+set smtp_pass = $imap_pass
