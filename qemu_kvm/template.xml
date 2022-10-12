@@ -25,11 +25,9 @@
       <target dev='hdc'/>
       <readonly/>
     </disk>
-    <network>
-      <name>default</name>
-      <bridge name='virbr0'/>
-      <forward mode="nat"/>
-    </network>
+    <interface type='network'>
+      <source network='default'/>
+    </interface>
     <input type='mouse' bus='ps2'/>
     <graphics type='vnc' port='-1' autoport='yes' listen='0.0.0.0' keymap='en-us'/>
   </devices>
