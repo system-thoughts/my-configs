@@ -1,0 +1,36 @@
+<domain type='kvm'>
+  <name>openEuler_22.03</name>
+  <memory unit='GiB'>8</memory>
+  <currentMemory unit='GiB'>8</currentMemory>
+  <vcpu>8</vcpu>
+  <os>
+    <type arch='x86_64' machine='pc'>hvm</type>
+    <boot dev='hd'/>
+    <boot dev='cdrom'/>
+  </os>
+  <clock offset='localtime'/>
+  <on_poweroff>destroy</on_poweroff>
+  <on_reboot>restart</on_reboot>
+  <on_crash>destroy</on_crash>
+  <devices>
+    <emulator>/usr/bin/qemu-kvm</emulator> <!-- Fedora36 qemu-kvm path -->
+    <disk type='file' device='disk'>
+      <driver name='qemu' type='qcow2'/>
+      <source file='/home/Rui/vm/openEuler_22.03.qcow2'/>
+      <target dev='hda'/>
+    </disk>
+    <disk type='file' device='cdrom'>
+      <driver name='qemu' type='raw'/>
+      <source file='/home/Rui/vm/openEuler-22.03-LTS-x86_64-dvd.iso'/>
+      <target dev='hdc'/>
+      <readonly/>
+    </disk>
+    <network>
+      <name>default</name>
+      <bridge name='virbr0'/>
+      <forward mode="nat"/>
+    </network>
+    <input type='mouse' bus='ps2'/>
+    <graphics type='vnc' port='-1' autoport='yes' listen='0.0.0.0' keymap='en-us'/>
+  </devices>
+</domain>
